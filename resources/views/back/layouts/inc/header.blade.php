@@ -1,0 +1,1 @@
+@livewire('inc.top-header')
