@@ -1,7 +1,7 @@
 @extends('back.layouts.app')
 
 @section('title')
-    Login
+    Home
 @endsection
 
 

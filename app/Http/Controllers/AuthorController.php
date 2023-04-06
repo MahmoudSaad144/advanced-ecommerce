@@ -11,7 +11,7 @@ class AuthorController extends Controller
 {
     public function index(Request $request){
 
-        return view('back.pages.home');
+        return view('back.pages.front.home');
     }
     public function logout(Request $request){
 

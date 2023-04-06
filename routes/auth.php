@@ -6,9 +6,9 @@ use App\Http\Controllers\AuthSocial\SocialiteloginController;
 
 
 Route::prefix('/')->name('')->group(function () {
+    Route::view('/home', 'back.pages.front.home')->name('home');
 
     Route::middleware(['guest'])->group(function () {
-
         Route::view('/login', 'back.pages.auth.login')->name('login');
         Route::view('/register', 'back.pages.auth.register')->name('register');
         Route::view('/forgot-password', 'back.pages.auth.forgot')->name('forgot-password');
@@ -25,8 +25,7 @@ Route::prefix('/')->name('')->group(function () {
     });
 
     Route::middleware(['auth','verified'])->group(function () {
-        Route::view('/home', 'back.pages.front.home')->name('home');
-        Route::view('/profile', 'back.pages.profile')->name('profile');
+        Route::view('/profile', 'back.pages.front.profile')->name('profile');
         Route::post('/crop',[AuthorController::class, 'crop'])->name('crop');
     });
 
