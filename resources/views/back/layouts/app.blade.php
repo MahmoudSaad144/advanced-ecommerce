@@ -15,37 +15,44 @@
     <meta name="turbolinks-visit-control" content="reload">
     <title>@yield('title')</title>
     <!-- CSS files -->
-    <link href="{{asset('./back/dist/css/tabler.min.css')}}" rel="stylesheet"/>
-    <link href="{{asset('./back/dist/css/tabler-flags.min.css')}}" rel="stylesheet"/>
-    <link href="{{asset('./back/dist/css/tabler-payments.min.css')}}" rel="stylesheet"/>
-    <link href="{{asset('./back/dist/css/tabler-vendors.min.css')}}" rel="stylesheet"/>
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;900&display=swap" rel="stylesheet">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="{{asset('./back/dist/css/bootstrap.min.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{asset('./back/dist/css/font-awesome.min.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{asset('./back/dist/css/elegant-icons.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{asset('./back/dist/css/nice-select.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{asset('./back/dist/css/jquery-ui.min.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{asset('./back/dist/css/owl.carousel.min.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{asset('./back/dist/css/slicknav.min.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{asset('./back/dist/css/style.css')}}" type="text/css">
+
     <link href="{{asset('./back/dist/libs/ijabo/ijabo.min.css')}}" rel="stylesheet"/>
     <link href="{{asset('./back/dist/libs/ijabocrop/ijaboCropTool.min.css')}}" rel="stylesheet"/>
 
         <!-- Libs JS -->
-        <script src="{{asset('./back/dist/libs/jquery/jquery-3.6.0.min.js')}}" defer></script>
+            <!-- Js Plugins -->
+        <script src="{{asset('./back/dist/js/jquery-3.3.1.min.js')}}" defer></script>
+        <script src="{{asset('./back/dist/js/bootstrap.min.js')}}" defer></script>
+        <script src="{{asset('./back/dist/js/jquery.nice-select.min.js')}}" defer></script>
+        <script src="{{asset('./back/dist/js/jquery-ui.min.js')}}" defer></script>
+        <script src="{{asset('./back/dist/js/jquery.slicknav.js')}}" defer></script>
+        <script src="{{asset('./back/dist/js/mixitup.min.js')}}" defer></script>
+        <script src="{{asset('./back/dist/js/owl.carousel.min.js')}}" defer></script>
         <script src="{{asset('./back/dist/libs/ijabo/ijabo.min.js')}}" defer></script>
         <script src="{{asset('./back/dist/libs/ijabocrop/ijaboCropTool.min.js')}}" defer></script>
-        <script src="{{asset('./back/dist/libs/apexcharts/dist/apexcharts.min.js')}}" defer></script>
-        <!-- Tabler Core -->
-        <script src="{{asset('./back/dist/js/tabler.min.js')}}" defer></script>
 
     @stack('stylesheets')
     @livewireStyles
-    <link href="{{asset('./back/dist/css/demo.min.css')}}" rel="stylesheet"/>
+    <link rel="stylesheet" href="{{asset('./back/dist/css/style.css')}}" type="text/css">
 </head>
 <body >
-    <div class="wrapper">
         @include('back.layouts.inc.header')
-        <div class="page-wrapper">
-        <div class="page-body">
-            <div class="container-xl">
+
                 @yield('content')
-            </div>
-        </div>
-        @include('back.layouts.inc.footer')
-        </div>
-    </div>
+
+        {{-- @include('back.layouts.inc.footer') --}}
     @stack('scripts')
     @livewireScripts
     <script>
@@ -66,7 +73,7 @@
         });
         /******************end*script-to-show-toastr-message **********/
     </script>
-    <script src="{{asset('./back/dist/js/demo.min.js')}}" defer></script>
+        <script src="{{asset('./back/dist/js/main.js')}}" defer></script>
     @livewireScripts
     <script> window.livewire.restart(); </script>
     <script type="module">

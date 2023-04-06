@@ -12,10 +12,6 @@ public function sayhi(){
 }
 
 
-
-
-
-
     public function render()
     {
         return view('livewire.front.home');

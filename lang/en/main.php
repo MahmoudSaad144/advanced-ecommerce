@@ -9,6 +9,6 @@ return [
     'lang'=>'lang',
     'Logout'=>' Logout',
     'profile'=>'profile',
-
+    'Signin'=> 'Sign in',
 
 ];
