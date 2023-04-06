@@ -1,7 +1,7 @@
 @extends('back.layouts.app')
 
 @section('title')
-    Shop
+    {{ __("Shop") }}
 @endsection
 
 
