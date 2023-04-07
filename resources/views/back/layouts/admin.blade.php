@@ -248,9 +248,9 @@
                         <li class="scrollable-container media-list"><a class="d-flex" href="javascript:void(0)">
                                 <div class="media d-flex align-items-start">
                                     <div class="media-left">
-                                        <div class="avatar"><img
-                                                src="../../../app-assets/images/portrait/small/avatar-s-15.jpg"
-                                                alt="avatar" width="32" height="32"></div>
+                                        <div class="avatar">
+                                            <img src="{{ url(auth()->user()->photo ?? "back/dist/img/author/default-img.png") }}" alt="avatar" width="32" height="32">
+                                        </div>
                                     </div>
                                     <div class="media-body">
                                         <p class="media-heading"><span class="font-weight-bolder">Congratulation Sam
@@ -261,9 +261,9 @@
                             </a><a class="d-flex" href="javascript:void(0)">
                                 <div class="media d-flex align-items-start">
                                     <div class="media-left">
-                                        <div class="avatar"><img
-                                                src="../../../app-assets/images/portrait/small/avatar-s-3.jpg"
-                                                alt="avatar" width="32" height="32"></div>
+                                        <div class="avatar">
+                                            <img src="{{ url(auth()->user()->photo ?? "back/dist/img/author/default-img.png") }}" alt="avatar" width="32" height="32">
+                                        </div>
                                     </div>
                                     <div class="media-body">
                                         <p class="media-heading"><span class="font-weight-bolder">New
@@ -340,28 +340,30 @@
                                 href="javascript:void(0)">Read all notifications</a></li>
                     </ul>
                 </li>
-                <li class="nav-item dropdown dropdown-user"><a class="nav-link dropdown-toggle dropdown-user-link"
-                        id="dropdown-user" href="javascript:void(0);" data-toggle="dropdown" aria-haspopup="true"
-                        aria-expanded="false">
-                        <div class="user-nav d-sm-flex d-none"><span class="user-name font-weight-bolder">John
-                                Doe</span><span class="user-status">Admin</span></div><span class="avatar"><img
-                                class="round" src="../../../app-assets/images/portrait/small/avatar-s-11.jpg"
-                                alt="avatar" height="40" width="40"><span
-                                class="avatar-status-online"></span></span>
+                <li class="nav-item dropdown dropdown-user">
+                    <a class="nav-link dropdown-toggle dropdown-user-link" id="dropdown-user" href="javascript:void(0);" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <div class="user-nav d-sm-flex d-none">
+                            <span class="user-name font-weight-bolder">{{ auth()->user()->name }}</span>
+                            <span class="user-status">{{ __( collect(auth()->user()->roles)->first() ?? "" ) }}</span>
+                        </div>
+                        <span class="avatar">
+                            <img src="{{ url(auth()->user()->photo ?? "back/dist/img/author/default-img.png") }}" alt="avatar" width="40" height="40">
+                            <span class="avatar-status-online"></span>
+                        </span>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdown-user">
                         
-                        <a class="dropdown-item" href="page-profile.html">
-                            <i class="mr-50" data-feather="user"></i> Profile
+                        <a class="dropdown-item" href="{{ route('profile') }}">
+                            <i class="mr-50" data-feather="user"></i> {{ __("Profile") }}
                         </a>
 
                         <div class="dropdown-divider"></div>
     
-                        <a class="dropdown-item" href="page-account-settings.html">
+                        <a class="dropdown-item" href="#">
                             <i class="mr-50" data-feather="settings"></i>
                             Settings
                         </a>
-                        <a class="dropdown-item" href="page-auth-login-v2.html">
+                        <a class="dropdown-item" href="{{ route('logout') }}">
                             <i class="mr-50" data-feather="power"></i> Logout
                         </a>
 
