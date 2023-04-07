@@ -6,7 +6,7 @@ use App\Http\Controllers\AuthSocial\SocialiteloginController;
 
 
 Route::prefix('/')->name('')->group(function () {
-    Route::view('/home', 'back.pages.front.home')->name('home');
+    // Route::view('/home', 'back.pages.front.home')->name('home');
 
     Route::middleware(['guest'])->group(function () {
         Route::view('/login', 'back.pages.auth.login')->name('login');

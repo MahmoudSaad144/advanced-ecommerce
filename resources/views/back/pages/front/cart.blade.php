@@ -7,12 +7,6 @@
 
 @section('content')
 
-<div class="page page-center">
-    <div class="container-tight py-4">
-        <div class="text-center mb-4">
-        </div>
-            @livewire('front.shop.cart')
-    </div>
-    </div>
+    @livewire('front.shop.cart')
 
 @endsection
