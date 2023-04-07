@@ -52,7 +52,7 @@
 
                 @yield('content')
 
-        {{-- @include('back.layouts.inc.footer') --}}
+        @include('back.layouts.inc.footer')
     @stack('scripts')
     @livewireScripts
     <script>
