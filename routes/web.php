@@ -17,6 +17,10 @@ use App\Http\Controllers\AuthorController;
 Route::get('/', [AuthorController::class , 'index'])->name('home');
 
 Route::view("shop", 'back.pages.front.shop')->name("shop");
+Route::view("checkout", 'back.pages.front.checkout')->name("checkout");
+Route::view("single", 'back.pages.front.single')->name("single");
+Route::view("cart", 'back.pages.front.cart')->name("cart");
+Route::view("contact", 'back.pages.front.contact')->name("contact");
 
 require __DIR__ .'/auth.php';
 

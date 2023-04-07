@@ -11,7 +11,7 @@
     <div class="container-tight py-4">
         <div class="text-center mb-4">
         </div>
-            @livewire('front.home')
+            @livewire('front.shop.cart')
     </div>
     </div>
 
