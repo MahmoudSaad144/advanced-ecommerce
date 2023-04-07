@@ -16,6 +16,8 @@ use App\Http\Controllers\AuthorController;
 
 Route::get('/', [AuthorController::class , 'index'])->name('home');
 
+Route::view("shop", 'back.pages.front.shop')->name("shop");
+
 require __DIR__ .'/auth.php';
 
 
