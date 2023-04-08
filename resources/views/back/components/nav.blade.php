@@ -5,7 +5,7 @@
     <li><a href="{{ route("contact") }}">Contact</a></li>
     @auth
         @if(auth()->user()->usertype == "Admin")
-             <li><a data-turbo="false" href="{{ route("dashboard") }}">Dashboard</a></li>
+             <li><a data-turbo="false" href="{{ route("dashboard") }}">{{ __("Dashboard") }}</a></li>
         @endif
     @endauth
 </ul>

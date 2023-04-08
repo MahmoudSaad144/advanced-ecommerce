@@ -42,7 +42,7 @@
           <li >
             <a href="{{route('home')}}">
               <i class="fa fa-tachometer-alt"></i>
-              <span>Dashboard</span>
+              <span>{{ __("Home") }}</span>
             </a>
           </li>
           <li class="sidebar-dropdown">
