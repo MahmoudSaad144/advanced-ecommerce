@@ -4,6 +4,8 @@
     <li><a href="{{ route("checkout") }}">Check Out</a></li>
     <li><a href="{{ route("contact") }}">Contact</a></li>
     @auth
-        <li><a data-turbo="false" href="{{ route("dashboard") }}">Dashboard</a></li>
+        @if(auth()->user()->usertype == "admin")
+            <li><a data-turbo="false" href="{{ route("dashboard") }}">Dashboard</a></li>
+        @endif
     @endauth
 </ul>
