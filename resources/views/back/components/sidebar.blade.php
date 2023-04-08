@@ -1,5 +1,5 @@
 <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
-  <a id="show-sidebar" class="btn btn-sm btn-dark" href="#">
+  <a id="show-sidebar" class="btn btn-sm btn-dark" href="">
     <i class="fas fa-bars"></i>
   </a>
   <nav id="sidebar" class="sidebar-wrapper">
@@ -53,32 +53,32 @@
             <div class="sidebar-submenu">
               <ul>
                 <li>
-                  <a href="#">{{ __("List") }}</a>
+                  <a href="">{{ __("List") }}</a>
                 </li>
                 <li>
-                  <a href="#">{{ __("New") }}</a>
+                  <a href="">{{ __("New") }}</a>
                 </li>
                 <li>
-                  <a href="#">{{ __("Trash") }}</a>
+                  <a href="">{{ __("Trash") }}</a>
                 </li>
               </ul>
             </div>
           </li>
           <li class="sidebar-dropdown">
-            <a href="#">
+            <a href="">
               <i class="far fa-gem"></i>
               <span>{{ __("Categories") }}</span>
             </a>
             <div class="sidebar-submenu">
               <ul>
                 <li>
-                  <a href="#">{{ __("List") }}</a>
+                  <a href="">{{ __("List") }}</a>
                 </li>
                 <li>
-                  <a href="#">{{ __("New") }}</a>
+                  <a href="">{{ __("New") }}</a>
                 </li>
                 <li>
-                  <a href="#">{{ __("Trash") }}</a>
+                  <a href="">{{ __("Trash") }}</a>
                 </li>
               </ul>
             </div>
@@ -95,19 +95,19 @@
     </div>
     <!-- sidebar-content  -->
     <div class="sidebar-footer">
-      <a href="#">
+      <a href="">
         <i class="fa fa-bell"></i>
         <span class="badge badge-pill badge-warning notification">3</span>
       </a>
-      <a href="#">
+      <a href="">
         <i class="fa fa-envelope"></i>
         <span class="badge badge-pill badge-success notification">7</span>
       </a>
-      <a href="#">
+      <a href="">
         <i class="fa fa-cog"></i>
         <span class="badge-sonar"></span>
       </a>
-      <a href="#">
+      <a href="">
         <i class="fa fa-power-off"></i>
       </a>
     </div>
