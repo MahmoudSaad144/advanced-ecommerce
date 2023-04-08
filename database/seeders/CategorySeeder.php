@@ -20,7 +20,7 @@ class CategorySeeder extends Seeder
 
             Category::updateOrCreate([
                 "category_name"=>fake()->name,
-                "description"=>fake()->address,
+                "description"=>fake()->text,
                 "photo"=>"",
                 "parent"=>"0",
                 "userid"=>rand(1,999),
