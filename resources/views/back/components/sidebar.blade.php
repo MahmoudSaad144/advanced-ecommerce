@@ -11,14 +11,12 @@
       </div>
       <div class="sidebar-header">
         <div class="user-pic">
-          <img class="img-responsive img-rounded" src="https://raw.githubusercontent.com/azouaoui-med/pro-sidebar-template/gh-pages/src/img/user.jpg"
-            alt="User picture">
         </div>
         <div class="user-info">
-          <span class="user-name">Jhon
-            <strong>Smith</strong>
+          <span class="user-name">
+            {{ auth()->user()->name ?? "" }}
           </span>
-          <span class="user-role">Administrator</span>
+          <span class="user-role">{{ auth()->user()->usertype->name ?? "" }}</span>
           <span class="user-status">
             <i class="fa fa-circle"></i>
             <span>Online</span>
@@ -48,20 +46,20 @@
             </a>
           </li>
           <li class="sidebar-dropdown">
-            <a href="#">
+            <a>
               <i class="fa fa-shopping-cart"></i>
-              <span>Courses</span>
+              <span>{{ __("Products") }}</span>
             </a>
             <div class="sidebar-submenu">
               <ul>
                 <li>
-                  <a href="#">Course Management</a>
+                  <a href="#">{{ __("List") }}</a>
                 </li>
                 <li>
-                  <a href="#">Course Status</a>
+                  <a href="#">{{ __("New") }}</a>
                 </li>
                 <li>
-                  <a href="#">Enrolment Request</a>
+                  <a href="#">{{ __("Trash") }}</a>
                 </li>
               </ul>
             </div>
@@ -69,15 +67,18 @@
           <li class="sidebar-dropdown">
             <a href="#">
               <i class="far fa-gem"></i>
-              <span>Quiz</span>
+              <span>{{ __("Categories") }}</span>
             </a>
             <div class="sidebar-submenu">
               <ul>
                 <li>
-                  <a href="#">General</a>
+                  <a href="#">{{ __("List") }}</a>
                 </li>
                 <li>
-                  <a href="#">Panels</a>
+                  <a href="#">{{ __("New") }}</a>
+                </li>
+                <li>
+                  <a href="#">{{ __("Trash") }}</a>
                 </li>
               </ul>
             </div>

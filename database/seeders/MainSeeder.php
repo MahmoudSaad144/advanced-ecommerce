@@ -20,7 +20,7 @@ class MainSeeder extends Seeder
     {
 
 
-        $Admin = User::create([
+        $Admin = User::updateOrCreate([
             'name'=>'Admin',
             'email'=>'admin@gmail.com',
             'email_verified_at'=>now(),
@@ -33,7 +33,7 @@ class MainSeeder extends Seeder
             'remember_token'=>Str::random(10),
         ]);
 
-        $user = User::create([
+        $user = User::updateOrCreate([
             'name'=>'User',
             'email'=>'user@gmail.com',
             'email_verified_at'=>now(),
@@ -46,7 +46,7 @@ class MainSeeder extends Seeder
             'remember_token'=>Str::random(10),
         ]);
 
-        $vendor = User::create([
+        $vendor = User::updateOrCreate([
             'name'=>'vendor',
             'email'=>'vendor@gmail.com',
             'email_verified_at'=>now(),
@@ -59,17 +59,15 @@ class MainSeeder extends Seeder
             'remember_token'=>Str::random(10),
         ]);
 
-        $Roll = Type::create([
+        $Roll = Type::updateOrCreate([
             'name'=>'User',
         ]);
-        $Roll = Type::create([
+        $Roll = Type::updateOrCreate([
             'name'=>'Vendor',
         ]);
-        $Roll = Type::create([
+        $Roll = Type::updateOrCreate([
             'name'=>'Admin',
         ]);
-
-
 
     }
 }

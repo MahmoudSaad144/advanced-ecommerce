@@ -25,4 +25,8 @@ Route::view("contact", 'back.pages.front.contact')->name("contact");
 require __DIR__ .'/auth.php';
 require __DIR__ .'/admin.php';
 
+Route::get("asd", function() {
+    dd(fake()->name);
+});
+
 
