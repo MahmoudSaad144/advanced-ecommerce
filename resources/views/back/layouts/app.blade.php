@@ -42,17 +42,32 @@
         <script src="{{asset('./back/dist/js/owl.carousel.min.js')}}" defer></script>
         <script src="{{asset('./back/dist/libs/ijabo/ijabo.min.js')}}" defer></script>
         <script src="{{asset('./back/dist/libs/ijabocrop/ijaboCropTool.min.js')}}" defer></script>
-
+        <script src="{{asset('./back/dist/libs/ijabocrop/ijaboCropTool.min.js')}}" defer></script>
     @stack('stylesheets')
     @livewireStyles
+    @auth
+        @if (auth()->user()->usertype->name == 'Admin')
+        <link rel="stylesheet" href="{{asset('./admin/css/style.css')}}" type="text/css">
+        @endif
+    @endauth
     <link rel="stylesheet" href="{{asset('./back/dist/css/style.css')}}" type="text/css">
 </head>
 <body >
+        @if (stristr(url()->current(),'admin'))
+            <div class="page-wrapper chiller-theme toggled">
+                @include('back.layouts.inc.adminHeader')
+                <!-- page-wrapper  -->
+                <main class="page-content">
+
+                    @yield('content')
+                </main>
+            </div>
+        @else
+        <!-- page-content" -->
         @include('back.layouts.inc.header')
-
-                @yield('content')
-
+            @yield('content')
         @include('back.layouts.inc.footer')
+        @endif
     @stack('scripts')
     @livewireScripts
     <script>
@@ -73,6 +88,11 @@
         });
         /******************end*script-to-show-toastr-message **********/
     </script>
+    @auth
+        @if (auth()->user()->usertype->name == 'Admin')
+        <script src="{{asset('./admin/js/main.js')}}" defer></script>
+        @endif
+    @endauth
         <script src="{{asset('./back/dist/js/main.js')}}" defer></script>
     @livewireScripts
     <script> window.livewire.restart(); </script>

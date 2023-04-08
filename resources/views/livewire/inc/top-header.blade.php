@@ -13,12 +13,12 @@
     @endphp
 
 
-<!-- Page Preloder -->
+{{-- <!-- Page Preloder -->
     @if ($isopen)
-    <div id="preloder">
-        <div class="loader"></div>
-    </div>
-    @endif
+        <div id="preloder">
+            <div class="loader"></div>
+        </div>
+    @endif --}}
 
     <!-- Humberger Begin -->
     <div class="humberger__menu__overlay"></div>
@@ -48,9 +48,16 @@
                     @endforeach
                 </ul>
             </div>
+            @guest
             <div class="header__top__right__auth">
                 <a href="{{route('login')}}"><i class="fa fa-user"></i> {{ trans('main.Signin') }}</a>
             </div>
+            @endguest
+            @auth
+            <div class="header__top__right__auth">
+                <a href="{{route('logout')}}"><i class="fa fa-user"></i> logout</a>
+            </div>
+            @endauth
         </div>
         <nav class="humberger__menu__nav mobile-menu">
             @include("back.components.nav")
@@ -108,9 +115,16 @@
                                 @endforeach
                             </ul>
                         </div>
+                        @guest
                         <div class="header__top__right__auth">
                             <a href="{{route('login')}}"><i class="fa fa-user"></i> {{ trans('main.Signin') }}</a>
                         </div>
+                        @endguest
+                        @auth
+                        <div class="header__top__right__auth">
+                            <a href="{{route('logout')}}"><i class="fa fa-user"></i> logout</a>
+                        </div>
+                        @endauth
                     </div>
                 </div>
             </div>

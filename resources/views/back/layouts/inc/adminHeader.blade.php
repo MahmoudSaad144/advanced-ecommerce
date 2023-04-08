@@ -1,0 +1,1 @@
+@livewire('inc.admin-header')

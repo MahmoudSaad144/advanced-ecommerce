@@ -13,6 +13,10 @@ use App\Http\Controllers\AuthorController;
 |
 */
 
-Route::group(["prefix"=>"admin", "as"=>"admin"], function() {
-    Route::view('dashboard', 'back.pages.admin.home')->name("dashboard");
+Route::middleware(['auth','verified','isadmin'])->group(function () {
+    Route::prefix('/admin')->name('')->group(function () {
+
+        Route::view('dashboard', 'back.pages.admin.home')->name("dashboard");
+
+    });
 });
