@@ -63,10 +63,10 @@
                 </main>
             </div>
         @else
-        <!-- page-content" -->
-        @include('back.layouts.inc.header')
-            @yield('content')
-        @include('back.layouts.inc.footer')
+            <!-- page-content" -->
+            @include('back.layouts.inc.header')
+                @yield('content')
+            @include('back.layouts.inc.footer')
         @endif
     @stack('scripts')
     @livewireScripts
