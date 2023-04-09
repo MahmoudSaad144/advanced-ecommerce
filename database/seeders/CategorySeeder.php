@@ -15,7 +15,7 @@ class CategorySeeder extends Seeder
      */
     public function run()
     {
-        
+
         for($i = 0;$i < 100;$i++) {
 
             Category::updateOrCreate([
@@ -23,7 +23,7 @@ class CategorySeeder extends Seeder
                 "description"=>fake()->text,
                 "photo"=>"",
                 "parent"=>"0",
-                "userid"=>rand(1,999),
+                "userid"=>"1",
             ]);
 
         }

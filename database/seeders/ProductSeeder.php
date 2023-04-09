@@ -23,10 +23,11 @@ class ProductSeeder extends Seeder
                 "product_price"=>rand(9,999999),
                 "product_sku"=>rand(9, 99),
                 "product_images"=>"",
+                "categoryid"=>rand(9,99),
                 "product_discount"=>"0",
+                "active"=>rand(0,1),
                 "vendorid"=>rand(9, 99),
             ]);
-
         }
     }
 }

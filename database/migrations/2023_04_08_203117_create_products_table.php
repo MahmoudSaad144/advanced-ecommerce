@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('products', function (Blueprint $table) {
-            $table->id('productid');
+            $table->id('id');
             $table->string('product_name');
             $table->text('product_desc');
             $table->integer('product_price');
@@ -26,6 +26,7 @@ return new class extends Migration
             $table->unsignedBigInteger("inventoryid")->default(1);
             $table->unsignedBigInteger("discount_id")->default(0);
             $table->unsignedBigInteger("views")->default(0);
+            $table->string('active')->default(0);
             $table->timestamps();
             $table->softDeletes();
         });

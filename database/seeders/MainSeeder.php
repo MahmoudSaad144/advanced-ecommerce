@@ -59,6 +59,22 @@ class MainSeeder extends Seeder
             'remember_token'=>Str::random(10),
         ]);
 
+        for($i = 0;$i <= 100;$i++) {
+
+            $vendor = User::updateOrCreate([
+                'name'=>fake()->name,
+                'email'=>fake()->name.Str::random(3).'@gmail.com',
+                'email_verified_at'=>now(),
+                'password'=>Hash::make(123456789),
+                'username'=>fake()->name.Str::random(3),
+                'photo'=>'back/dist/img/author/default-img.png',
+                'biography'=>fake()->text,
+                'type'=>'2',
+                'blocked'=>'0',
+                'remember_token'=>Str::random(10),
+            ]);
+        }
+
         $Roll = Type::updateOrCreate([
             'name'=>'User',
         ]);

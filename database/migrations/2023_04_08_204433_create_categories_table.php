@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('categories', function (Blueprint $table) {
-            $table->id('categoryid');
+            $table->id('id');
             $table->string('category_name')->unique();
             $table->text('description')->nullable()->default('text');
             $table->text('photo')->nullable()->default('defualt.png');

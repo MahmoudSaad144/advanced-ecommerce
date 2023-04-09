@@ -11,6 +11,7 @@
       </div>
       <div class="sidebar-header">
         <div class="user-pic">
+            <img src="{{asset(auth()->user()->photo)}}" alt="" srcset="">
         </div>
         <div class="user-info">
           <span class="user-name">
@@ -42,32 +43,26 @@
           <li >
             <a href="{{route('home')}}">
               <i class="fa fa-tachometer-alt"></i>
-              <span>{{ __("Home") }}</span>
+              <span>{{ __("shop") }}</span>
             </a>
           </li>
-          <li class="sidebar-dropdown">
-            <a>
+          <li >
+            <a href="{{route('dashboard')}}">
+              <i class="fa fa-tachometer-alt"></i>
+              <span>{{ __("Dashboard") }}</span>
+            </a>
+          </li>
+          <li>
+            <a href="{{route('products')}}">
               <i class="fa fa-shopping-cart"></i>
               <span>{{ __("Products") }}</span>
             </a>
-            <div class="sidebar-submenu">
-              <ul>
-                <li>
-                  <a href="">{{ __("List") }}</a>
-                </li>
-                <li>
-                  <a href="">{{ __("New") }}</a>
-                </li>
-                <li>
-                  <a href="">{{ __("Trash") }}</a>
-                </li>
-              </ul>
-            </div>
           </li>
-          <li class="sidebar-dropdown">
-            <a href="">
-              <i class="far fa-gem"></i>
-              <span>{{ __("Categories") }}</span>
+
+        <li class="sidebar-dropdown">
+            <a>
+              <i class="fa fa-shopping-cart"></i>
+              <span>{{ __("Products") }}</span>
             </a>
             <div class="sidebar-submenu">
               <ul>

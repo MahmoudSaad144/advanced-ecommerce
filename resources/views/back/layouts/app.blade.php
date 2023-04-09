@@ -34,6 +34,7 @@
         <!-- Libs JS -->
             <!-- Js Plugins -->
         <script src="{{asset('./back/dist/js/jquery-3.3.1.min.js')}}" defer></script>
+        <script src="{{asset('./back/dist/js/popper.min.js')}}" defer></script>
         <script src="{{asset('./back/dist/js/bootstrap.min.js')}}" defer></script>
         <script src="{{asset('./back/dist/js/jquery.nice-select.min.js')}}" defer></script>
         <script src="{{asset('./back/dist/js/jquery-ui.min.js')}}" defer></script>
@@ -58,7 +59,6 @@
                 @include('back.layouts.inc.adminHeader')
                 <!-- page-wrapper  -->
                 <main class="page-content">
-
                     @yield('content')
                 </main>
             </div>
