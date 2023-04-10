@@ -19,7 +19,7 @@ class Products extends Component
     public $product_images = [];
 
     public function mount() {
-        // $this->categories = Category::all();
+        $this->categories = Category::all();
     }
 
     public function updated($propertyName)
@@ -30,7 +30,7 @@ class Products extends Component
         //     dd($item["category_name"], $this->categorySearch);
         //     return str_contains($item["category_name"], $this->categorySearch);
         // });
-        
+
         // $this->categories = strlen($this->categorySearch) ? Category::all() : $this->categories;
 
         // dd($this->categories);
@@ -86,11 +86,11 @@ class Products extends Component
             "vendorid"=>auth()->id(),
             "categoryid"=>$this->categoryid ?? 1,
         ]);
-        
+
         // foreach($this->product_images as $iamge) {
-            
+
         // }
-        
+
     } // end of StoreProductHandler
 
     public function showToastr($message, $type){
@@ -106,7 +106,7 @@ class Products extends Component
 
         return view('livewire.admin.products',[
             'products'=>$products,
-            'categories'=>Category::search(trim($this->categorySearch))->orderBy('created_at', 'asc')->get(),
+            'categories'=>$this->categories,
         ]);
     }
 }
