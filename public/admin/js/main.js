@@ -1,39 +1,45 @@
-jQuery(function ($) {
+jQuery(function($) {
 
-        $(".sidebar-dropdown > a").click(function() {
-    $(".sidebar-submenu").slideUp(200);
-    if (
-        $(this)
-        .parent()
-        .hasClass("active")
-    ) {
-        $(".sidebar-dropdown").removeClass("active");
-        $(this)
-        .parent()
-        .removeClass("active");
-    } else {
-        $(".sidebar-dropdown").removeClass("active");
-        $(this)
-        .next(".sidebar-submenu")
-        .slideDown(200);
-        $(this)
-        .parent()
-        .addClass("active");
-    }
+    $(".sidebar-dropdown > a").click(function() {
+        $(".sidebar-submenu").slideUp(200);
+        if (
+            $(this)
+            .parent()
+            .hasClass("active")
+        ) {
+            $(".sidebar-dropdown").removeClass("active");
+            $(this)
+                .parent()
+                .removeClass("active");
+        } else {
+            $(".sidebar-dropdown").removeClass("active");
+            $(this)
+                .next(".sidebar-submenu")
+                .slideDown(200);
+            $(this)
+                .parent()
+                .addClass("active");
+        }
     });
 
     $("#close-sidebar").click(function() {
-    $(".page-wrapper").removeClass("toggled");
+        $(".page-wrapper").removeClass("toggled");
     });
     $("#show-sidebar").click(function() {
-    $(".page-wrapper").addClass("toggled");
+        $(".page-wrapper").addClass("toggled");
+    });
+
+    window.addEventListener('contentChanged', event => {
+        $(".select").select2({
+            width: 'resolve' // need to override the changed default
+        });
+        // $('.selectpicker').selectpicker();
     });
 
 
-    $(".select").select2({
+    $("select").select2({
         width: 'resolve' // need to override the changed default
     });
 
 
 });
-

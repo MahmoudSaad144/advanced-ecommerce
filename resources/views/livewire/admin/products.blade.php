@@ -68,7 +68,7 @@
 
     </div>
 
-    <div class="modal fade" wire:ignore.self id="exampleModalLg" tabindex="-1" aria-labelledby="exampleModalLgLabel" aria-hidden="true">
+    <div class="modal fade" wire:ignore.self id="exampleModalLg" aria-labelledby="exampleModalLgLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
             <div class="modal-header">
@@ -109,6 +109,7 @@
                             <span class="text-danger">{{$message}}</span>
                         @enderror
                     </div>
+                    {{ $product_sku }}
 
                     <div>
                         <input class="form-control m-2" placeholder="{{ __("Product images") }}" wire:model.lazy="product_images" type="file" multiple>
@@ -121,12 +122,14 @@
                             <span class="text-danger">{{$message}}</span>
                         @enderror
                     </div>
-                    <select class="select" style="width: 50%">
-                        <option>Java</option>
-                        <option>Javascript</option>
-                        <option>PHP</option>
-                        <option>Visual Basic</option>
+                    <select wire:model="categoryid" class="select" style="width: 50%">
+                        <option value="Java">Java</option>
+                        <option value="Javascript">Javascript</option>
+                        <option value="PHP">PHP</option>
+                        <option value="Visual Basic">Visual Basic</option>
+                        <option value="Visual">Visual Basic</option>
                     </select>
+                    {{ $categoryid }}
                     <input class="form-control m-2" placeholder="{{ __("Product discount") }}" wire:model.lazy="product_discount" type="number">
                     <div class="modal-footer justify-content-between">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

@@ -12,7 +12,7 @@ class Products extends Component
 {
     use WithPagination, WithFileUploads;
 
-    public $search;
+    public $search,$categories;
 
     public $product_name, $product_desc, $product_price, $product_sku, $product_discount, $categoryid, $categorySearch;
 
@@ -102,6 +102,8 @@ class Products extends Component
 
     public function render()
     {
+        $this->dispatchBrowserEvent('contentChanged');
+
         $products = Product::search(trim($this->search))->orderBy('created_at', 'asc')->paginate(8);
 
         return view('livewire.admin.products',[

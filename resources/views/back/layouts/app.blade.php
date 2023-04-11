@@ -20,21 +20,21 @@
 
     <!-- Css Styles -->
     <link rel="stylesheet" href="{{asset('./back/dist/css/bootstrap.min.css')}}" type="text/css">
-    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet"/>
     <link rel="stylesheet" href="{{asset('./back/dist/css/jquery-ui.min.css')}}" type="text/css">
     <link rel="stylesheet" href="{{asset('./back/dist/css/font-awesome.min.css')}}" type="text/css">
     <link rel="stylesheet" href="{{asset('./back/dist/css/elegant-icons.css')}}" type="text/css">
     <link rel="stylesheet" href="{{asset('./back/dist/css/owl.carousel.min.css')}}" type="text/css">
     <link rel="stylesheet" href="{{asset('./back/dist/css/slicknav.min.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{asset('./back/dist/css/select2.css')}}" type="text/css">
     <link href="{{asset('./back/dist/libs/ijabo/ijabo.min.css')}}" rel="stylesheet"/>
     <link href="{{asset('./back/dist/libs/ijabocrop/ijaboCropTool.min.css')}}" rel="stylesheet"/>
 
         <!-- Libs JS -->
             <!-- Js Plugins -->
-        <script src="{{asset('./back/dist/js/jquery-3.3.1.min.js')}}" defer></script>
+        <script src="{{asset('./back/dist/js/jquery-3.6.4.min.js')}}" defer></script>
         <script src="{{asset('./back/dist/js/bootstrap.min.js')}}" defer></script>
         <script src="{{asset('./back/dist/js/popper.min.js')}}" defer></script>
-        <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js" defer></script>
+        <script src="{{asset('./back/dist/js/select2.min.js')}}" defer></script>
         <script src="{{asset('./back/dist/js/jquery-ui.min.js')}}" defer></script>
         <script src="{{asset('./back/dist/js/jquery.slicknav.js')}}" defer></script>
         <script src="{{asset('./back/dist/js/mixitup.min.js')}}" defer></script>
