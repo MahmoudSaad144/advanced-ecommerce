@@ -20,41 +20,37 @@
 
     <!-- Css Styles -->
     <link rel="stylesheet" href="{{asset('./back/dist/css/bootstrap.min.css')}}" type="text/css">
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="{{asset('./back/dist/css/jquery-ui.min.css')}}" type="text/css">
     <link rel="stylesheet" href="{{asset('./back/dist/css/font-awesome.min.css')}}" type="text/css">
     <link rel="stylesheet" href="{{asset('./back/dist/css/elegant-icons.css')}}" type="text/css">
-    <link rel="stylesheet" href="{{asset('./back/dist/css/nice-select.css')}}" type="text/css">
-    <link rel="stylesheet" href="{{asset('./back/dist/css/jquery-ui.min.css')}}" type="text/css">
     <link rel="stylesheet" href="{{asset('./back/dist/css/owl.carousel.min.css')}}" type="text/css">
     <link rel="stylesheet" href="{{asset('./back/dist/css/slicknav.min.css')}}" type="text/css">
-    <link rel="stylesheet" href="{{asset('./back/dist/css/style.css')}}" type="text/css">
-
     <link href="{{asset('./back/dist/libs/ijabo/ijabo.min.css')}}" rel="stylesheet"/>
     <link href="{{asset('./back/dist/libs/ijabocrop/ijaboCropTool.min.css')}}" rel="stylesheet"/>
 
         <!-- Libs JS -->
             <!-- Js Plugins -->
         <script src="{{asset('./back/dist/js/jquery-3.3.1.min.js')}}" defer></script>
-        <script src="{{asset('./back/dist/js/popper.min.js')}}" defer></script>
         <script src="{{asset('./back/dist/js/bootstrap.min.js')}}" defer></script>
-        <script src="{{asset('./back/dist/js/jquery.nice-select.min.js')}}" defer></script>
+        <script src="{{asset('./back/dist/js/popper.min.js')}}" defer></script>
+        <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js" defer></script>
         <script src="{{asset('./back/dist/js/jquery-ui.min.js')}}" defer></script>
         <script src="{{asset('./back/dist/js/jquery.slicknav.js')}}" defer></script>
         <script src="{{asset('./back/dist/js/mixitup.min.js')}}" defer></script>
         <script src="{{asset('./back/dist/js/owl.carousel.min.js')}}" defer></script>
         <script src="{{asset('./back/dist/libs/ijabo/ijabo.min.js')}}" defer></script>
         <script src="{{asset('./back/dist/libs/ijabocrop/ijaboCropTool.min.js')}}" defer></script>
-        <script src="{{asset('./back/dist/libs/ijabocrop/ijaboCropTool.min.js')}}" defer></script>
     @stack('stylesheets')
     @livewireStyles
-    @auth
-        @if (auth()->user()->usertype->name == 'Admin')
-        <link rel="stylesheet" href="{{asset('./admin/css/style.css')}}" type="text/css">
-        @endif
-    @endauth
+    @if (request()->is(''.LaravelLocalization::setLocale().'/admin/*'))
+    <link rel="stylesheet" href="{{asset('./admin/css/style.css')}}" type="text/css">
+    @else
     <link rel="stylesheet" href="{{asset('./back/dist/css/style.css')}}" type="text/css">
+    @endif
 </head>
 <body >
-        @if (stristr(url()->current(),'admin'))
+        @if (request()->is(''.LaravelLocalization::setLocale().'/admin/*'))
             <div class="page-wrapper chiller-theme toggled">
                 @include('back.layouts.inc.adminHeader')
                 <!-- page-wrapper  -->
@@ -88,12 +84,13 @@
         });
         /******************end*script-to-show-toastr-message **********/
     </script>
-    @auth
-        @if (auth()->user()->usertype->name == 'Admin')
-        <script src="{{asset('./admin/js/main.js')}}" defer></script>
-        @endif
-    @endauth
-        <script src="{{asset('./back/dist/js/main.js')}}" defer></script>
+
+    @if (request()->is(''.LaravelLocalization::setLocale().'/admin/*'))
+    <script src="{{asset('./admin/js/main.js')}}" defer></script>
+    @else
+    <script src="{{asset('./back/dist/js/main.js')}}" defer></script>
+    @endif
+
     @livewireScripts
     <script> window.livewire.restart(); </script>
     <script type="module">

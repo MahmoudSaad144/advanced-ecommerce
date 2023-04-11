@@ -8,10 +8,6 @@
         </div>
         <div class="row">
             <div class="d-flex p-1 w-100 justify-content-between">
-                {{-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#productFormModalLong">
-                    <i class="fa fa-plus"></i>
-                    {{ __("Add Product") }}
-                </button> --}}
                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLg" >{{ __("Add Product") }}</button>
                 {{-- <div class="input-group-prepend">
                     <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown"
@@ -24,7 +20,7 @@
                     </div>
                 </div> --}}
                 <div>
-                    <input class="form-control m-2 mr-sm-2" wire:model.lazy="search" type="search" placeholder="Search"
+                    <input class="form-control m-2 mr-sm-2" wire:model="search" type="search" placeholder="Search"
                         aria-label="Search">
                 </div>
             </div>
@@ -125,15 +121,13 @@
                             <span class="text-danger">{{$message}}</span>
                         @enderror
                     </div>
-                    <input placeholder="{{ __("Choose Category") }}" class="form-control m-2" list="categories" wire:model.lazy="categoryid" id="category">
-                    <datalist id="categories" class="CustomSelect">
-                        @foreach ($categories as $category)
-                        <option data-value="{{$category->id}}" value="{{$category->category_name}}">
-                        @endforeach
-                    </datalist>
-                    {{$categoryid}}
+                    <select class="select" style="width: 50%">
+                        <option>Java</option>
+                        <option>Javascript</option>
+                        <option>PHP</option>
+                        <option>Visual Basic</option>
+                    </select>
                     <input class="form-control m-2" placeholder="{{ __("Product discount") }}" wire:model.lazy="product_discount" type="number">
-
                     <div class="modal-footer justify-content-between">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                         <button type="submit" class="btn btn-primary">{{ __("Add") }}</button>
@@ -143,9 +137,5 @@
             </div>
         </div>
     </div>
-
-
-
-
 
 </div>

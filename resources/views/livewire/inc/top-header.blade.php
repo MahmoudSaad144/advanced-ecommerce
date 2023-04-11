@@ -1,20 +1,18 @@
 <div>
 
     @php
-        $isopen =false ;
         $isHome = false;
         if (url()->current() == route('home')) {
             $isHome = true;
         }
-        if (url()->current() == url('en') || url()->current() == url('ar')) {
-            $isopen = true;
+        if (request()->is(LaravelLocalization::setLocale())) {
             $isHome = true;
         }
     @endphp
 
 
-{{-- <!-- Page Preloder -->
-    @if ($isopen)
+<!-- Page Preloder -->
+    {{-- @if ($isopen)
         <div id="preloder">
             <div class="loader"></div>
         </div>
